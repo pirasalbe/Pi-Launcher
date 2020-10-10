@@ -1,2 +1,2 @@
 # Pi-Launcher
-Launcher based on Yahoo Aviate Launcher
+Android Launcher based on Yahoo Aviate Launcher
