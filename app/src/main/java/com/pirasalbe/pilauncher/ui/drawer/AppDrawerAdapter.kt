@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.drawer
+package com.pirasalbe.pilauncher.ui.drawer
 
 import android.content.Context
 import android.content.Intent
@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.pirasalbe.pilauncher.R
+import com.pirasalbe.pilauncher.entity.app.AppInfo
 
 /**
  * Obtains the apps and manage the drawer
@@ -86,7 +87,7 @@ class AppDrawerAdapter : RecyclerView.Adapter<AppDrawerAdapter.ViewHolder> {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): AppDrawerAdapter.ViewHolder {
+    ): ViewHolder {
         // adding rows to drawerActivity
         val inflater = LayoutInflater.from(parent.context)
         val view: View = inflater.inflate(R.layout.app_item, parent, false)

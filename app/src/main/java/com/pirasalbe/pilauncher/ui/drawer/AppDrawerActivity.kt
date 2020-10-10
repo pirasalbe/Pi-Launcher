@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.drawer
+package com.pirasalbe.pilauncher.ui.drawer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
