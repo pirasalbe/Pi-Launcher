@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Pi Launcher</string>
     <string name="app_icon">App Icon</string>
-    <string name="app_drawer">App Drawer</string>
 </resources>
