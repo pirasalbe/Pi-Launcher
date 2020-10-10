@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.drawer
+package com.pirasalbe.pilauncher.entity.app
 
 import android.graphics.drawable.Drawable
 
