@@ -21,12 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.home.HomeActivity"></activity>
-
-        <activity android:name=".ui.categories.CategoriesActivity" />
-
-        <activity android:name=".ui.drawer.AppDrawerActivity" />
     </application>
 
 </manifest>
