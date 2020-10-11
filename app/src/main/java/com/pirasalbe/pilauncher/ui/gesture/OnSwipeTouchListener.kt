@@ -76,9 +76,24 @@ abstract class OnSwipeTouchListener : View.OnTouchListener {
 
     }
 
+    /**
+     * Swipe Right
+     */
     abstract fun onSwipeRight()
+
+    /**
+     * Swipe Left
+     */
     abstract fun onSwipeLeft()
+
+    /**
+     * Swipe Top
+     */
     abstract fun onSwipeTop()
+
+    /**
+     * Swipe Bottom
+     */
     abstract fun onSwipeBottom()
 
 }

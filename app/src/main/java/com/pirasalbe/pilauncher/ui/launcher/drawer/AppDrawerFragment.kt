@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pirasalbe.pilauncher.R
+import com.pirasalbe.pilauncher.ui.gesture.OnSwipeTouchListener
 
 
 /**
@@ -27,6 +29,24 @@ class AppDrawerFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
         val appDrawerAdapter = AppDrawerAdapter(activity!!)
         recyclerView.adapter = appDrawerAdapter
+
+        // subscribe swipe
+        view.setOnTouchListener(object : OnSwipeTouchListener(activity!!) {
+            override fun onSwipeRight() {
+                view.findNavController()
+                    .navigate(R.id.action_appDrawerFragment_to_categoriesFragment)
+            }
+
+            override fun onSwipeLeft() {
+            }
+
+            override fun onSwipeTop() {
+            }
+
+            override fun onSwipeBottom() {
+            }
+
+        });
 
         return view;
     }
