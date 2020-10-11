@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.ui
+package com.pirasalbe.pilauncher.ui.launcher
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

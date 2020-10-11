@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.pirasalbe.pilauncher.ui.home.HomeFragment"
+        android:name="com.pirasalbe.pilauncher.ui.launcher.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.pirasalbe.pilauncher.ui.categories.CategoriesFragment"
+        android:name="com.pirasalbe.pilauncher.ui.launcher.categories.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/appDrawerFragment"
-        android:name="com.pirasalbe.pilauncher.ui.drawer.AppDrawerFragment"
+        android:name="com.pirasalbe.pilauncher.ui.launcher.drawer.AppDrawerFragment"
         android:label="fragment_app_drawer"
         tools:layout="@layout/fragment_app_drawer"
         app:startDestination="@id/action_appDrawerFragment_to_categoriesFragment2">
