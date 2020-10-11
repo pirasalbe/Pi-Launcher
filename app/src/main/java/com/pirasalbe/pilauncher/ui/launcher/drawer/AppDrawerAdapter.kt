@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.ui.drawer
+package com.pirasalbe.pilauncher.ui.launcher.drawer
 
 import android.content.Context
 import android.content.Intent

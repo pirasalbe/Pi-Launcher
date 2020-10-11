@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.ui.drawer
+package com.pirasalbe.pilauncher.ui.launcher.drawer
 
 import android.os.Bundle
 import android.view.LayoutInflater

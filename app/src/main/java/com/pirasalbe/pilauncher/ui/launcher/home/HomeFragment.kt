@@ -1,10 +1,10 @@
-package com.pirasalbe.pilauncher.ui.home
+package com.pirasalbe.pilauncher.ui.launcher.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.pirasalbe.pilauncher.R
 
 // TODO: Rename parameter arguments, choose names that match

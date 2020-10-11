@@ -1,4 +1,4 @@
-package com.pirasalbe.pilauncher.ui.categories
+package com.pirasalbe.pilauncher.ui.launcher.categories
 
 import android.os.Bundle
 import android.view.LayoutInflater
