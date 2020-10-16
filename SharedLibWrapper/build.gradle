@@ -13,5 +13,5 @@ sourceCompatibility = 1.8
 
 dependencies {
     implementation fileTree(dir: "${FRAMEWORK_PREBUILTS_DIR}/quickstep/libs", include: 'sysui_shared.jar')
-    compileOnly fileTree(dir: "$ANDROID_TOP/prebuilts/fullsdk-${org.gradle.internal.os.OperatingSystem.current().isMacOsX() ? "darwin" : "linux"}/platforms/30", include: 'android.jar')
+    compileOnly fileTree(dir: "$ANDROID_TOP/prebuilts/fullsdk-${org.gradle.internal.os.OperatingSystem.current().isMacOsX() ? "darwin" : "linux"}/platforms/${COMPILE_SDK}", include: 'android.jar')
 }
