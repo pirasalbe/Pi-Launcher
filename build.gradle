@@ -94,10 +94,6 @@ android {
             manifest.srcFile "quickstep/AndroidManifest-launcher.xml"
         }
 
-        l3goWithQuickstepDebug {
-            manifest.srcFile "quickstep/AndroidManifest-launcher.xml"
-        }
-
         withoutQuickstep {
             java.srcDirs = ['src_ui_overrides']
         }
