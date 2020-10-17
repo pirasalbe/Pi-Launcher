@@ -1,4 +1,5 @@
 buildscript {
+    ext.kotlin_version = '1.4.0'
     repositories {
         mavenCentral()
         google()
@@ -7,6 +8,7 @@ buildscript {
     dependencies {
         classpath GRADLE_CLASS_PATH
         classpath PROTOBUF_CLASS_PATH
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -14,6 +16,8 @@ final String ANDROID_TOP = "${rootDir}/../../.."
 final String FRAMEWORK_PREBUILTS_DIR = "${ANDROID_TOP}/prebuilts/framework_intermediates/"
 
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.protobuf'
 
 android {
@@ -50,12 +54,6 @@ android {
             testApplicationId 'com.android.launcher3.tests'
         }
 
-        withQuickstep {
-            dimension "recents"
-
-            minSdkVersion 28
-        }
-
         withoutQuickstep {
             dimension "recents"
         }
@@ -90,18 +88,8 @@ android {
             manifest.srcFile "AndroidManifest.xml"
         }
 
-        aospWithQuickstep {
-            manifest.srcFile "quickstep/AndroidManifest-launcher.xml"
-        }
-
         withoutQuickstep {
             java.srcDirs = ['src_ui_overrides']
-        }
-
-        withQuickstep {
-            res.srcDirs = ['quickstep/res', 'quickstep/recents_ui_overrides/res']
-            java.srcDirs = ['quickstep/src', 'quickstep/recents_ui_overrides/src']
-            manifest.srcFile "quickstep/AndroidManifest.xml"
         }
     }
 }
@@ -117,18 +105,13 @@ allprojects {
 }
 
 dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.protobuf:protobuf-java:3.13.0'
+    implementation "com.google.protobuf.nano:protobuf-javanano:3.1.0"
     implementation "androidx.dynamicanimation:dynamicanimation:${ANDROID_X_VERSION}"
     implementation "androidx.recyclerview:recyclerview:${ANDROID_X_VERSION}"
     implementation "androidx.preference:preference:${ANDROID_X_VERSION}"
     implementation project(':IconLoader')
-    withQuickstepImplementation project(':SharedLibWrapper')
-    implementation fileTree(dir: "${FRAMEWORK_PREBUILTS_DIR}/libs", include: 'launcher_protos.jar')
-
-    // Recents lib dependency
-    withQuickstepImplementation fileTree(dir: "${FRAMEWORK_PREBUILTS_DIR}/quickstep/libs", include: 'sysui_shared.jar')
-
-    // Required for AOSP to compile. This is already included in the sysui_shared.jar
-    withoutQuickstepImplementation fileTree(dir: "${FRAMEWORK_PREBUILTS_DIR}/libs", include: 'plugin_core.jar')
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation "org.mockito:mockito-core:1.9.5"
@@ -148,7 +131,7 @@ protobuf {
         generateProtoTasks {
             all().each { task ->
                 task.builtins {
-                    remove java
+                    java {}
                     javanano {
                         option "java_package=launcher_log_extension.proto|com.android.launcher3.userevent.nano"
                         option "java_package=launcher_log.proto|com.android.launcher3.userevent.nano"
