@@ -50,8 +50,8 @@ android {
     productFlavors {
         aosp {
             dimension "app"
-            applicationId 'com.android.launcher3'
-            testApplicationId 'com.android.launcher3.tests'
+            applicationId 'com.pirasalbe.pilauncher'
+            testApplicationId 'com.pirasalbe.pilauncher.tests'
         }
 
         withoutQuickstep {

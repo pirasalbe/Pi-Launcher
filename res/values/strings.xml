@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 /*
 * Copyright (C) 2008 The Android Open Source Project
 *
@@ -22,7 +21,7 @@
     <skip />
 
     <!-- Application name -->
-    <string name="app_name">Launcher3</string>
+    <string name="app_name" translatable="false">Pi Launcher</string>
     <!-- Work folder name -->
     <string name="work_folder_name">Work</string>
     <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
@@ -130,7 +129,7 @@
     <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> is not allowed to make phone calls</string>
 
     <!-- Widgets: -->
-    <skip />    
+    <skip />
 
     <!-- Text to show user in place of a gadget when we can't display it properly -->
     <string name="gadget_error_text">Problem loading widget</string>
@@ -242,7 +241,7 @@
     <!-- Text announced by accessibility when the popup containing the list of widgets is closed. [CHAR_LIMIT=100] -->
     <string name="widgets_list_closed">Widgets list closed</string>
 
-<!-- Strings for accessibility actions -->
+    <!-- Strings for accessibility actions -->
     <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
     <string name="action_add_to_workspace">Add to Home screen</string>
 
@@ -347,7 +346,6 @@
     <string name="work_apps_paused_body">Work apps can\'t send you notifications, use your battery, or access your location</string>
     <!-- content description for paused work apps list -->
     <string name="work_apps_paused_content_description">Work profile is paused. Work apps can\’t send you notifications, use your battery, or access your location</string>
-
 
 
     <!-- A tip shown pointing at work toggle -->
