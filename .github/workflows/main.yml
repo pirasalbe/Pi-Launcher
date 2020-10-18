@@ -39,6 +39,8 @@ jobs:
       # https://github.com/marketplace/actions/telegram-notify
       - name: Send debug
         uses: appleboy/telegram-action@master
+        env:
+          TIME: "${{ steps.time.outputs.time }}"
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
