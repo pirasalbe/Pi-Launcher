@@ -32,6 +32,21 @@ jobs:
       - name: Stats
         run: |
           ls -lah
+      - name: Stats
+        run: |
+          ls -lah build
+      - name: Stats
+        run: |
+          ls -lah build/outputs
+      - name: Stats
+        run: |
+          ls -lah build/outputs/apk
+      - name: Stats
+        run: |
+          ls -lah build/outputs/apk/aospWithoutQuickstep
+      - name: Stats
+        run: |
+          ls -lah build/outputs/apk/aospWithoutQuickstep/debug
       - name: Prepare APK
         env:
           TIME: "${{ steps.time.outputs.time }}"
