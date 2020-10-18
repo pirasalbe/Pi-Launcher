@@ -49,13 +49,17 @@ android {
 
     // The flavor dimensions for build variants (e.g. aospWithQuickstep, aospWithoutQuickstep)
     // See: https://developer.android.com/studio/build/build-variants#flavor-dimensions
-    flavorDimensions "app", "recents"
+    flavorDimensions "app", "custom", "recents"
 
     productFlavors {
         aosp {
             dimension "app"
             applicationId 'com.pirasalbe.pilauncher'
             testApplicationId 'com.pirasalbe.pilauncher.tests'
+        }
+
+        pilauncher {
+            dimension "custom"
         }
 
         withoutQuickstep {
@@ -88,8 +92,10 @@ android {
             java.srcDirs = ['src_flags', 'src_shortcuts_overrides']
         }
 
-        aospWithoutQuickstep {
-            manifest.srcFile "AndroidManifest.xml"
+        pilauncher {
+            java.srcDirs = ['pilauncher/src']
+            res.srcDirs = ['pilauncher/res']
+            manifest.srcFile "pilauncher/AndroidManifest.xml"
         }
 
         withoutQuickstep {

@@ -21,7 +21,7 @@ jobs:
       - name: Build Android project
         uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
-          args: "./gradlew :assembleAospWithoutQuickstepRelease"
+          args: "./gradlew :assembleAospPilauncherWithoutQuickstepRelease"
   test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest

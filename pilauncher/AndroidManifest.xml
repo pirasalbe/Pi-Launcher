@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.launcher3">
+
+    <uses-sdk
+        android:targetSdkVersion="29"
+        android:minSdkVersion="25" />
+    <!--
+    Manifest entries specific to Launcher3. This is merged with AndroidManifest-common.xml.
+    Refer comments around specific entries on how to extend individual components.
+    -->
+
+    <application
+        android:backupAgent="com.android.launcher3.LauncherBackupAgent"
+        android:fullBackupOnly="true"
+        android:fullBackupContent="@xml/backupscheme"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher_home"
+        android:label="@string/derived_app_name"
+        android:theme="@style/AppTheme"
+        android:largeHeap="@bool/config_largeHeap"
+        android:restoreAnyVersion="true"
+        android:supportsRtl="true">
+
+        <!--
+        Main launcher activity. When extending only change the name, and keep all the
+        attributes and intent filters the same
+        -->
+        <activity
+            android:name="com.android.launcher3.Launcher"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="unspecified"
+            android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenSize|screenLayout|smallestScreenSize"
+            android:resizeableActivity="true"
+            android:resumeWhilePausing="true"
+            android:taskAffinity=""
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY" />
+                <category android:name="android.intent.category.LAUNCHER_APP" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.launcher3.grid.control"
+                android:value="${packageName}.grid_control" />
+        </activity>
+
+        !--
+        The settings activity. To extend point settings_fragment_name to appropriate fragment
+        class
+        -->
+        <activity
+            android:name="com.pirasalbe.pilauncher.settings.SettingsActivity"
+            android:label="@string/settings_button_text"
+            android:theme="@style/HomeSettingsTheme"
+            android:autoRemoveFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
