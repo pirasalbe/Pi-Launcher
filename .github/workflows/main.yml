@@ -29,6 +29,9 @@ jobs:
         with:
           timeZone: 0
           format: "YYYY-MM-DD_HH-mm-ss"
+      - name: Stats
+        run: |
+          ls -lah
       - name: Prepare APK
         env:
           TIME: "${{ steps.time.outputs.time }}"
