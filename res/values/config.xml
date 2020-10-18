@@ -17,7 +17,7 @@
     <string name="delete_package_intent" translatable="false">#Intent;action=android.intent.action.DELETE;launchFlags=0x10800000;end</string>
 
     <!-- String representing the fragment class for settings activity.-->
-    <string name="settings_fragment_name" translatable="false">com.android.launcher3.settings.SettingsActivity$LauncherSettingsFragment</string>
+    <string name="settings_fragment_name" translatable="false">com.pirasalbe.pilauncher.settings.SettingsActivity$LauncherSettingsFragment</string>
 
     <!-- DragController -->
     <item type="id" name="drag_event_parity" />
@@ -104,18 +104,18 @@
     <item type="id" name="action_move_screen_forwards" />
     <item type="id" name="action_resize" />
     <item type="id" name="action_deep_shortcuts" />
-    <item type="id" name="action_shortcuts_and_notifications"/>
+    <item type="id" name="action_shortcuts_and_notifications" />
     <item type="id" name="action_dismiss_notification" />
     <item type="id" name="action_remote_action_shortcut" />
     <item type="id" name="action_dismiss_prediction" />
-    <item type="id" name="action_pin_prediction"/>
+    <item type="id" name="action_pin_prediction" />
 
     <!-- QSB IDs. DO not change -->
     <item type="id" name="search_container_workspace" />
     <item type="id" name="search_container_all_apps" />
 
     <!-- Recents -->
-    <item type="id" name="overview_panel"/>
+    <item type="id" name="overview_panel" />
 
     <!-- Whether to enable background preloading of task thumbnails. -->
     <bool name="config_enableTaskSnapshotPreloading">true</bool>
@@ -185,6 +185,5 @@
         <item>@dimen/hint_scale_velocity_dp_per_s</item>
     </array>
 
-    <string-array name="live_wallpapers_remove_sysui_scrims">
-    </string-array>
+    <string-array name="live_wallpapers_remove_sysui_scrims"></string-array>
 </resources>

@@ -15,12 +15,10 @@ import androidx.preference.PreferenceScreen
 import androidx.recyclerview.widget.RecyclerView
 import com.android.launcher3.LauncherFiles
 import com.android.launcher3.R
-import com.android.launcher3.SessionCommitReceiver
 import com.android.launcher3.Utilities
 import com.android.launcher3.config.FeatureFlags
 import com.android.launcher3.settings.NotificationDotsPreference
 import com.android.launcher3.settings.PreferenceHighlighter
-import com.android.launcher3.states.RotationHelper
 import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper
 import com.android.launcher3.util.SecureSettingsObserver
 
@@ -92,9 +90,9 @@ class SettingsActivity : FragmentActivity(), PreferenceFragmentCompat.OnPreferen
      */
     class LauncherSettingsFragment : PreferenceFragmentCompat() {
         private var mNotificationDotsObserver: SecureSettingsObserver? = null
-        private var mHighLightKey: String? = null
-        private var mPreferenceHighlighted = false
-        override fun onCreatePreferences(savedInstanceState: Bundle, rootKey: String) {
+        protected var mHighLightKey: String? = null
+        protected var mPreferenceHighlighted = false
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             var rootKey: String? = rootKey
             val args = arguments
             mHighLightKey = args?.getString(EXTRA_FRAGMENT_ARG_KEY)
@@ -145,16 +143,6 @@ class SettingsActivity : FragmentActivity(), PreferenceFragmentCompat.OnPreferen
                             Settings.Secure.getUriFor(NOTIFICATION_ENABLED_LISTENERS), false,
                             mNotificationDotsObserver!!)
                     mNotificationDotsObserver!!.dispatchOnChange()
-                    return true
-                }
-                SessionCommitReceiver.ADD_ICON_PREFERENCE_KEY -> return Utilities.ATLEAST_OREO
-                RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY -> {
-                    if (resources.getBoolean(R.bool.allow_rotation)) {
-                        // Launcher supports rotation by default. No need to show this setting.
-                        return false
-                    }
-                    // Initialize the UI once
-                    preference.setDefaultValue(RotationHelper.getAllowRotationDefaultValue())
                     return true
                 }
                 FLAGS_PREFERENCE_KEY ->                     // Only show flag toggler UI if this build variant implements that.
