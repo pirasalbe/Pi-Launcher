@@ -30,12 +30,6 @@
         </intent>
     </com.android.launcher3.settings.NotificationDotsPreference>
 
-    <androidx.preference.PreferenceScreen
-        android:key="pref_desktop_options"
-        android:persistent="false"
-        android:title="Desktop"
-        android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
-
     <SwitchPreference
         android:key="pref_add_icon_to_home"
         android:title="@string/auto_add_shortcuts_label"
