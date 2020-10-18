@@ -28,6 +28,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
+        archivesBaseName = "PiLauncher-$versionName"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -35,6 +36,9 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+        }
+        release {
+            minifyEnabled true
         }
     }
 

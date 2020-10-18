@@ -29,11 +29,12 @@ jobs:
         with:
           timeZone: 0
           format: "YYYY-MM-DD_HH-mm-ss"
+
       - name: Prepare APK
         env:
           TIME: "${{ steps.time.outputs.time }}"
         run: |
-          cp build/outputs/apk/aospWithoutQuickstep/debug/*-debug.apk build/outputs/apk/${TIME}.apk
+          sudo cp build/outputs/apk/aospWithoutQuickstep/debug/*-debug.apk build/outputs/apk/${TIME}.apk
 
       # https://github.com/marketplace/actions/telegram-notify
       - name: Send debug
