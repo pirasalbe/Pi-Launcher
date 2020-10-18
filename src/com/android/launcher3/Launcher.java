@@ -2019,7 +2019,7 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
         // After we have added all the screens, if the wallpaper was locked to the default state,
         // then notify to indicate that it can be released and a proper wallpaper offset can be
         // computed before the next layout
-        mWorkspace.unlockWallpaperFromDefaultPageOnNextLayout();
+        // mWorkspace.unlockWallpaperFromDefaultPageOnNextLayout();
     }
 
     private void bindAddScreens(IntArray orderedScreenIds) {

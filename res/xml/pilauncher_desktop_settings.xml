@@ -14,4 +14,10 @@
         android:persistent="true"
         android:summary="@string/allow_rotation_desc"
         android:title="@string/allow_rotation_title" />
+
+    <SwitchPreference
+        android:defaultValue="@bool/scrolling_wallpaper"
+        android:key="pref_scrollingWallpaper"
+        android:persistent="true"
+        android:title="@string/scrolling_wallpaper_desc" />
 </PreferenceScreen>

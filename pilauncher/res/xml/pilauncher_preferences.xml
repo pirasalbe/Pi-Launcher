@@ -18,7 +18,7 @@
         android:fragment="com.pirasalbe.pilauncher.settings.DesktopSettings"
         android:key="pref_desktop_options"
         android:persistent="false"
-        android:title="Desktop" />
+        android:title="@string/desktop_title" />
 
     <SwitchPreference
         android:defaultValue="false"
