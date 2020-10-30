@@ -69,7 +69,8 @@ public class WallpaperOffsetInterpolator extends BroadcastReceiver {
         // To match the default wallpaper behavior in the system, we default to either the left
         // or right edge on initialization
         if (mLockedToDefaultPage || numScrollingPages <= 1) {
-            out[0] =  mIsRtl ? 1 : 0;
+            out[0] = 1;
+            out[1] = 2;
             return;
         }
 
@@ -191,7 +192,7 @@ public class WallpaperOffsetInterpolator extends BroadcastReceiver {
         private final Interpolator mInterpolator;
         private final WallpaperManager mWM;
 
-        private float mCurrentOffset = 0.5f; // to force an initial update
+        private float mCurrentOffset = -0.5f; // to force an initial update
         private boolean mAnimating;
         private long mAnimationStartTime;
         private float mAnimationStartOffset;

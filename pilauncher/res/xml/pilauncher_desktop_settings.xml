@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_add_icon_to_home"
+        android:persistent="true"
+        android:summary="@string/auto_add_shortcuts_description"
+        android:title="@string/auto_add_shortcuts_label" />
+
+    <SwitchPreference
+        android:defaultValue="@bool/allow_rotation"
+        android:key="pref_allowRotation"
+        android:persistent="true"
+        android:summary="@string/allow_rotation_desc"
+        android:title="@string/allow_rotation_title" />
+
+    <SwitchPreference
+        android:defaultValue="@bool/scrolling_wallpaper"
+        android:key="pref_scrollingWallpaper"
+        android:persistent="true"
+        android:title="@string/scrolling_wallpaper_desc" />
+</PreferenceScreen>
