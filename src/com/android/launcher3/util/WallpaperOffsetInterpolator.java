@@ -192,7 +192,7 @@ public class WallpaperOffsetInterpolator extends BroadcastReceiver {
         private final Interpolator mInterpolator;
         private final WallpaperManager mWM;
 
-        private float mCurrentOffset = 0.5f; // to force an initial update
+        private float mCurrentOffset = -0.5f; // to force an initial update
         private boolean mAnimating;
         private long mAnimationStartTime;
         private float mAnimationStartOffset;
